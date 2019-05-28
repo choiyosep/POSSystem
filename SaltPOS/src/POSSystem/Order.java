@@ -54,4 +54,8 @@ public class Order {
 	public void enterInformation(String info){
 		payment.doPayment(info);
 	}
+
+	public void enterCustomer(String phone_number) {
+		
+	}
 }

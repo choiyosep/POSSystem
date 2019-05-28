@@ -9,6 +9,9 @@ public class Register {
 	private static FoodCourt foodCourt = new FoodCourt();
 	private static UserInterfaceList userInterfaceList;
 	private static UserInterface userInterface;
+	private CalculateSale currentCaculateSale;
+	private ClientList clist = ClientList.getInstance();
+	private ArrayList<Client> currentClientList = clist.getList();
 	
 	/* order method */
 	public static void makeNewOrder(){
@@ -45,12 +48,17 @@ public class Register {
 	public static void addRefundInfo(){
 		foodCourt.getOrderList().insertRefund(currentRefund);
 	}
-	/* Á¤»ê method */
-	//public static void calculateSale() {
-	//	foodCourt.getCalculateSaleList().
-	//}
-	
-	
+
+	/* caculate sale*/
+	public void makeCalculateSale() {
+		currentCaculateSale = new CalculateSale();
+	}
+
+	public int requestCalculateSale() {
+		if(currentCaculateSale.equals(null)) makeCalculateSale();
+		currentCaculateSale.calculate(currentOrder, currentRefund);
+		return currentCaculateSale.getCalculateSale();
+	}
 	
 	/* payment method*/
 	
@@ -69,8 +77,12 @@ public class Register {
 	public static void makePointPayment() {
 		currentOrder.makePayment("PointPayment");		
 	}
-	
-	
+
+	/* Client */
+	public void registerClient(String phoneNumber) {
+		Client client = new Client(phoneNumber);
+		currentClientList.add(client);
+	}
 	
 	/* getter & setter */
 	
