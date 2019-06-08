@@ -9,11 +9,12 @@ public class Register {
 	private static Refund currentRefund;
 	private static Order currentOrder;
 	private static Payment payment;
-	private CalculateSale currentCaculateSale;
+	private static CalculateSale currentCaculateSale;
 	private ClientList clist = ClientList.getInstance();
 	
 	
 	public void getScreen() {
+		System.out.println("=============기능 선택==========");
 		System.out.println("1. 결제하기");
 		System.out.println("2. 환불하기");
 		System.out.println("3. 정산하기");
@@ -45,7 +46,11 @@ public class Register {
 			
 		}
 		System.out.println("총 주문 금액:"+order.getTotal());
+		
+		currentRefund.setOrderNumber(orderNumber);		
 		currentRefund.doRefund(order, orderNumber);
+		refundList.add(currentRefund);
+
 	}
 	
 	
@@ -60,14 +65,13 @@ public class Register {
 	}
 
 	/* caculate sale*/
-	public void makeCalculateSale() {
+	public static void makeCalculateSale() {
 		currentCaculateSale = new CalculateSale();
 	}
 
-	public int requestCalculateSale() {
+	public static void requestCalculateSale() {
 		if(currentCaculateSale.equals(null)) makeCalculateSale();
-		currentCaculateSale.calculate(currentOrder, currentRefund);
-		return currentCaculateSale.getCalculateSale();
+		currentCaculateSale.calculate(orderList, refundList);
 	}
 	
 	/* payment method*/
@@ -157,4 +161,12 @@ public class Register {
 		Register.payment = payment;
 	}
 
+<<<<<<< HEAD
+=======
+
+	public static void showRefundResult() {
+		System.out.println(currentOrder.getTotal()+"원 환불 완료되었습니다!! 감사합니다");
+		
+	}
+>>>>>>> e9e775767378bb9ea625fa7f15c33ddc6b1433db
 }

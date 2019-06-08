@@ -38,4 +38,11 @@ public class Refund {
 	public void setRefundPrice(int refundPrice) {
 		this.refundPrice = refundPrice;
 	}
+
+	@Override
+	public String toString() {
+		return "Refund [date=" + date + ", orderNumber=" + orderNumber + ", refundPrice=" + refundPrice + "]";
+	}
+	
+	
 }
