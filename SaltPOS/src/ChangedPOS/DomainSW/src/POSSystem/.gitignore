@@ -7,3 +7,12 @@
 /Register.class
 /TabletMenu.class
 /Tablet.class
+/OrderedFood.class
+/OrderList.class
+/CalculateSale.class
+/CashPayment.class
+/PointPayment.class
+/RFactory.class
+/Client.class
+/ClientList.class
+/CreditPayment.class
