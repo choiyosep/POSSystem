@@ -16,7 +16,7 @@ class ClientList {
         return clientsList;
     }
 
-    public Client getClientInfo(String phone_number) {
+    public Client enterClientInfo(String phone_number) {
         for(Client client : clientsList) {
             if(client.getphoneNumber().equals(phone_number)) {
                 return client;

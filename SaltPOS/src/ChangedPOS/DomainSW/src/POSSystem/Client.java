@@ -3,7 +3,7 @@ package POSSystem;
 //import java.util.ArrayList;
 
 public class Client {
-    // 고객 핸드폰, 고객 적립금
+
     private String phoneNumber;
     private int point = 0;
 
