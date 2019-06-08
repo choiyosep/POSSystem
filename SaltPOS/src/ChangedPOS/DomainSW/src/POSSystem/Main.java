@@ -43,6 +43,7 @@ public class Main {
 		do {
 			int num, orderNumber, paymentNumber, cash;
 			String phoneNumber, giftNumber, cardNumber;
+			
 			register.getScreen();
 			num = sc.nextInt();
 			
