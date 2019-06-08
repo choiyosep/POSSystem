@@ -1,6 +1,6 @@
 package POSSystem;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Main { 
 	public static void main(String[] arg) {
@@ -12,9 +12,20 @@ public class Main {
 		
 		ArrayList<FoodInfo> foodInfoList = tablet.getMenu();
 		
+		Scanner sc = new Scanner(System.in);
 		
 		do {
-			System.out.println("주문할 음식 번호를 선택하세요");
+			int menuNumber, count;
+			tablet.showMenu();
+			
+			menuNumber = sc.nextInt();
+			if(menuNumber == 0) break;
+			
+			System.out.println("수량을 입력해주세요");
+			count = sc.nextInt();
+			
+			tablet.selectMenu(menuNumber-1, count);
+			
 			
 			
 		} while(true);

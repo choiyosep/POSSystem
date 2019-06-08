@@ -27,6 +27,11 @@ public class Tablet {
 	public void addFoodinfo(FoodInfo foodInfo){
 		foodInfoList.add(foodInfo);
 	}
+
+	public void selectMenu(int i, int count) {
+	
+		
+	}
 	
 	
 }
