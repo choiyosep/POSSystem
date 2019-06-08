@@ -5,7 +5,7 @@ import java.util.Date;
 public class Register {
 	private static ArrayList<Refund> refundList = new ArrayList<>();
 	private static OrderList orderList = new OrderList();
-
+	private static PaymentFactory paymentFactory = new PaymentFactory();
 	private static Refund currentRefund;
 	private static Order currentOrder;
 	private static Payment payment;
@@ -71,19 +71,19 @@ public class Register {
 	/* payment method*/
 	
 	public static void makeCashPayment() {
-		setPayment(currentOrder.makePayment("CashPayment"));
+		setPayment(paymentFactory.makePayment("CashPayment"));
 	}
 	
 	public static void makeCreditPayment() {
-		setPayment(currentOrder.makePayment("CreditPayment"));		
+		setPayment(paymentFactory.makePayment("CreditPayment"));		
 	}
 	
 	public static void makeGiftPayment() {
-		setPayment(currentOrder.makePayment("GiftPayment"));		
+		setPayment(paymentFactory.makePayment("GiftPayment"));		
 	}
 	
 	public static void makePointPayment() {
-		setPayment(currentOrder.makePayment("PointPayment"));	
+		setPayment(paymentFactory.makePayment("PointPayment"));	
 	}
 	
 	public static void enterCash(int cash) {
@@ -149,7 +149,4 @@ public class Register {
 	public static void setPayment(Payment payment) {
 		Register.payment = payment;
 	}
-	
-	
-
 }

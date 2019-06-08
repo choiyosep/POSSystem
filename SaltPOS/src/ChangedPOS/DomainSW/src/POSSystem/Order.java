@@ -29,10 +29,10 @@ public class Order {
 		orderedFoodList.add(orderedFood);	
 	}
 	
-	public Payment makePayment(String paymentType){
-		payment = RFactory.getInstance().getPayment(paymentType);
-		return payment;
-	}
+	//public Payment makePayment(String paymentType){
+		//payment = PaymentFactory.
+		//return payment;
+	//}
 	
 	
 	public ArrayList<OrderedFood> getOrderdedFoodList(){

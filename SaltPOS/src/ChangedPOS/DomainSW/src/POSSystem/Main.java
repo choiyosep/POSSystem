@@ -54,6 +54,7 @@ public class Main {
 				 	System.out.println("===================");
 				 	System.out.println("결제방식을 선택하세요.");
 				 	paymentNumber = sc.nextInt();
+				 	
 				 	switch(paymentNumber) {
 				 		case(1) :
 				 			Register.makeCashPayment();

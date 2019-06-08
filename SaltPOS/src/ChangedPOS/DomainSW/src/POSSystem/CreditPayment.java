@@ -1,7 +1,12 @@
 package POSSystem;
 
 public class CreditPayment extends Payment{
-
+	
+	@Override
+	public String getName() {
+		return "CreditPayment";
+	}
+	
 	@Override
 	public void showChange(int cash, int total) {
 		// Nothing

@@ -17,3 +17,5 @@
 /ClientList.class
 /CreditPayment.class
 /GiftPayment.class
+/PaymentFactory.class
+/Factory.class
