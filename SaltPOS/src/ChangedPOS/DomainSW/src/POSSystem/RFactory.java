@@ -15,7 +15,7 @@ public class RFactory {
 			String ClassName = paymentType;
 			try {
 				Class c = Class.forName("POSSystem."+ ClassName);
-				Payment payment = (Payment)c.newInstance();
+				Payment payment = (Payment)(c.newInstance());
 			} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -51,6 +51,7 @@ public class Main {
 				case(1) : // 결제
 					System.out.println("주문번호를 입력하세요.");
 				 	orderNumber = sc.nextInt();
+				 	System.out.println("===================");
 				 	System.out.println("결제방식을 선택하세요.");
 				 	paymentNumber = sc.nextInt();
 				 	switch(paymentNumber) {
@@ -82,7 +83,23 @@ public class Main {
 					Register.makeRefund();
 					System.out.println("주문번호를 입력하세요.");
 				 	orderNumber = sc.nextInt();
-					Register.enterOrderNumber(orderNumber);
+					Register.enterRefundOrderNumber(orderNumber);
+					
+					System.out.println("결제방식을 선택하세요.");
+				 	paymentNumber = sc.nextInt();
+				 	switch(paymentNumber) {
+				 		case(1) : //현금
+				 			break;
+				 		case(2) : //카드
+				 			System.out.println("카드번호 입력하세요.");
+				 			break;
+				 		case(3) : //상품권
+				 			System.out.println("상품권번호을 입력하세요.");
+				 			break;
+				 		case(4) : //적립금
+				 			System.out.println("핸드폰 번호를 입력하세요.");
+				 			break;
+				 	}
 					
 					break;
 				case(3) : // 정산
