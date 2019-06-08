@@ -12,12 +12,13 @@ public class Main {
 		
 		ArrayList<FoodInfo> foodInfoList = tablet.getMenu();
 		
+		tablet.showMenu();
 		
-		do {
-			System.out.println("주문할 음식 번호를 선택하세요");
-			
-			
-		} while(true);
+//		do {
+//			System.out.println("주문할 음식 번호를 선택하세요");
+//			
+//			
+//		} while(true);
 	}
 	
 	
