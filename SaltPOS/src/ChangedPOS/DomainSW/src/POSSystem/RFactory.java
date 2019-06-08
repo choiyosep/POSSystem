@@ -5,16 +5,17 @@ public class RFactory {
 	Payment payment;
 
 	public static synchronized RFactory getInstance() {
-		if (instance.equals(null))
+		if (instance == null)
 			instance = new RFactory();
 		return instance;
 	}
 
 	public Payment getPayment(String paymentType) {
-		if (payment.equals(null)&&!(Payment.class.getName().equals(paymentType))){ 
-			String ClassName = System.getProperty(paymentType);
+		if (payment == null && !(Payment.class.getName().equals(paymentType))){ 
+			String ClassName = paymentType;
 			try {
-				Payment payment = (Payment)(Class.forName(ClassName).newInstance());
+				Class c = Class.forName("POSSystem."+ ClassName);
+				Payment payment = (Payment)c.newInstance();
 			} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

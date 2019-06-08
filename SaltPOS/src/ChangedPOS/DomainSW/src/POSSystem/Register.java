@@ -8,10 +8,11 @@ public class Register {
 
 	private static Refund currentRefund;
 	private static Order currentOrder;
+	private static Payment payment;
 	private CalculateSale currentCaculateSale;
 	private ClientList clist = ClientList.getInstance();
 	private ArrayList<Client> currentClientList = clist.getList();
-	private int change = 0;
+	
 	
 	public void getScreen() {
 		System.out.println("1. 결제하기");
@@ -57,22 +58,33 @@ public class Register {
 	/* payment method*/
 	
 	public static void makeCashPayment() {
-		currentOrder.makePayment("CashPayment");
+		setPayment(currentOrder.makePayment("CashPayment"));
 	}
 	
 	public static void makeCreditPayment() {
-		currentOrder.makePayment("CreditPayment");		
+		setPayment(currentOrder.makePayment("CreditPayment"));		
 	}
 	
 	public static void makeGiftPayment() {
-		currentOrder.makePayment("GiftPayment");		
+		setPayment(currentOrder.makePayment("GiftPayment"));		
 	}
 	
 	public static void makePointPayment() {
-		currentOrder.makePayment("PointPayment");		
+		setPayment(currentOrder.makePayment("PointPayment"));	
 	}
 	
-	
+	public static void enterCash(int cash) {
+		getPayment().showChange(cash, getCurrentOrder().getTotal());
+	}
+
+	public static void enterCreditInfo(String cardNumber) {
+		getPayment().showResult(cardNumber, currentOrder.getTotal());
+	}
+
+	public static void enterGiftInfo(String giftNumber) {
+		getPayment().showResult(giftNumber, currentOrder.getTotal());
+		
+	}
 	
 	
 	/* Client */
@@ -116,22 +128,15 @@ public class Register {
 	}
 
 
-	public static void enterCash(int cash) {
-		currentOrder.showChange();
+	public static Payment getPayment() {
+		return payment;
 	}
 
 
-	public static void enterCreditInfo(String cardNumber) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	public static void enterGiftInfo(String giftNumber) {
-		// TODO Auto-generated method stub
-		
+	public static void setPayment(Payment payment) {
+		Register.payment = payment;
 	}
 	
 	
-	
+
 }

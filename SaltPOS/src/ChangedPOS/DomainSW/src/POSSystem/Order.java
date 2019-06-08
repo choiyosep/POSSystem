@@ -29,17 +29,14 @@ public class Order {
 		orderedFoodList.add(orderedFood);	
 	}
 	
-	public void makePayment(String paymentType){
+	public Payment makePayment(String paymentType){
 		payment = RFactory.getInstance().getPayment(paymentType);
+		return payment;
 	}
 	
 	
 	public ArrayList<OrderedFood> getOrderdedFoodList(){
 		return orderedFoodList;
-	}
-	
-	public void showChange(int money) {
-		System.out.println("°Å½º¸§µ·Àº " + (money-getTotal()));
 	}
 
 	public void enterCustomer(String phone_number) {
@@ -51,6 +48,9 @@ public class Order {
 		return "Order [orderNumber=" + orderNumber + ", price=" + price + ", orderedFoodList=" + orderedFoodList
 				+ ", payment=" + payment + "]";
 	}
+
+	
+	
 	
 	
 	

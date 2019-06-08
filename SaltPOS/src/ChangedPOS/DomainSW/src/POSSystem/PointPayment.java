@@ -3,13 +3,17 @@ package POSSystem;
 public class PointPayment extends Payment{
 
 	@Override
-	public int doPayment(String info, int money) {
+	public void showChange(int cash, int total) {
+		// TODO Auto-generated method stub
 		
 	}
-	
-	public void enterCash(int cash) {
+
+	@Override
+	public void showResult(String info, int total) {
+		// TODO Auto-generated method stub
 		
 	}
+
 
 	
 }

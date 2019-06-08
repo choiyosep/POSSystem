@@ -37,6 +37,7 @@ public class Main {
 		
 		
 		Register.getOrderList().insertOrder(currentOrder);
+		Register.setCurrentOrder(currentOrder);
 		
 		System.out.println("==============POS System===========");
 		outerloop:
