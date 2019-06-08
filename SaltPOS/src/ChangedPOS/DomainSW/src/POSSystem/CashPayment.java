@@ -3,9 +3,9 @@ package POSSystem;
 public class CashPayment extends Payment {
 
 	@Override
-	public void doPayment(String info) {
-		// TODO Auto-generated method stub
+	public int doPayment(String info, int from, int to) {
+		return from - to;
+		
 	}
 
-	
 }

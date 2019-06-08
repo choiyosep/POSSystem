@@ -11,6 +11,14 @@ public class Register {
 	private CalculateSale currentCaculateSale;
 	private ClientList clist = ClientList.getInstance();
 	private ArrayList<Client> currentClientList = clist.getList();
+	private int change = 0;
+	
+	public void getScreen() {
+		System.out.println("1. 결제하기");
+		System.out.println("2. 환불하기");
+		System.out.println("3. 환불하기");
+		System.out.println("기능을 선택하세요.");
+	}
 	
 	
 	/* refund method */
@@ -48,22 +56,25 @@ public class Register {
 	
 	/* payment method*/
 	
-//	public static void makeCashPayment() {
-//		currentOrder.makePayment("CashPayment");
-//	}
-//	
-//	public static void makeCreditPayment() {
-//		currentOrder.makePayment("CreditPayment");		
-//	}
-//	
-//	public static void makeGiftPayment() {
-//		currentOrder.makePayment("GiftPayment");		
-//	}
-//	
-//	public static void makePointPayment() {
-//		currentOrder.makePayment("PointPayment");		
-//	}
-
+	public static void makeCashPayment() {
+		currentOrder.makePayment("CashPayment");
+	}
+	
+	public static void makeCreditPayment() {
+		currentOrder.makePayment("CreditPayment");		
+	}
+	
+	public static void makeGiftPayment() {
+		currentOrder.makePayment("GiftPayment");		
+	}
+	
+	public static void makePointPayment() {
+		currentOrder.makePayment("PointPayment");		
+	}
+	
+	
+	
+	
 	/* Client */
 	public void registerClient(String phoneNumber) {
 		Client client = new Client(phoneNumber);
@@ -102,6 +113,24 @@ public class Register {
 
 	public static void setOrderList(OrderList orderList) {
 		Register.orderList = orderList;
+	}
+
+
+	public static void enterCash(int cash) {
+		currentOrder.showChange();
+		
+	}
+
+
+	public static void enterCreditInfo(String cardNumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public static void enterGiftInfo(String giftNumber) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

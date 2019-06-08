@@ -15,6 +15,7 @@ public class Main {
 		
 		
 		Scanner sc = new Scanner(System.in);
+		Scanner sc2 = new Scanner(System.in);
 		
 		do {
 			int menuNumber, count;
@@ -38,7 +39,57 @@ public class Main {
 		Register.getOrderList().insertOrder(currentOrder);
 		
 		System.out.println("==============POS System===========");
-		
+		outerloop:
+		do {
+			int num, orderNumber, paymentNumber, cash;
+			String phoneNumber, giftNumber, cardNumber;
+			register.getScreen();
+			num = sc.nextInt();
+			
+			switch(num) {
+				case(1) : // 결제
+					System.out.println("주문번호를 입력하세요.");
+				 	orderNumber = sc.nextInt();
+				 	System.out.println("결제방식을 선택하세요.");
+				 	paymentNumber = sc.nextInt();
+				 	switch(paymentNumber) {
+				 		case(1) :
+				 			Register.makeCashPayment();
+				 			System.out.println("현금을 입력하세요.");
+				 			Register.enterCash(sc.nextInt());
+				 			break;
+				 		case(2) :
+				 			Register.makeCreditPayment();
+				 			System.out.println("카드번호 입력하세요.");
+			 				Register.enterCreditInfo(sc2.nextLine());
+				 			break;
+				 		case(3) :
+				 			Register.makeGiftPayment();
+				 			System.out.println("상품권번호을 입력하세요.");
+				 			Register.enterGiftInfo(sc2.nextLine());
+				 			break;
+				 		case(4) :
+				 			Register.makePointPayment();
+				 			System.out.println("핸드폰 번호를 입력하세요.");
+				 			break;
+				 	}
+			
+				 	
+				 	
+ 					break;
+				case(2) : // 환불
+					
+					break;
+				case(3) : // 정산
+					
+					break;
+				case(0) :
+					break outerloop;
+			}
+			
+			
+			
+		} while(true);
 				
 	
 	}

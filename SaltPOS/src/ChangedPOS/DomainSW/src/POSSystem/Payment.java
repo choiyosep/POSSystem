@@ -2,6 +2,6 @@ package POSSystem;
 
 public abstract class Payment {
 	
-	public abstract void doPayment(String info);
+	public abstract int doPayment(String info, int from, int to);
 
 }
