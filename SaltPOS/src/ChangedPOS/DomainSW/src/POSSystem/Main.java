@@ -107,6 +107,10 @@ public class Main {
 					
 					break;
 				case(3) : // Á¤»ê
+					Register.makeCalculateSale();
+					Register.requestCalculateSale();
+					
+									
 					
 					break;
 				case(0) :

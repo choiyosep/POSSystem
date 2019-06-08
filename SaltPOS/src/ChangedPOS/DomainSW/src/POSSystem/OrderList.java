@@ -26,6 +26,20 @@ public class OrderList {
 	public String toString() {
 		return "OrderList [orderLists=" + orderLists + ", refundLists=" + refundLists + "]";
 	}
+	public ArrayList<Order> getOrderLists() {
+		return orderLists;
+	}
+	public void setOrderLists(ArrayList<Order> orderLists) {
+		this.orderLists = orderLists;
+	}
+	public ArrayList<Refund> getRefundLists() {
+		return refundLists;
+	}
+	public void setRefundLists(ArrayList<Refund> refundLists) {
+		this.refundLists = refundLists;
+	}
+	
+	
 	
 	
 	

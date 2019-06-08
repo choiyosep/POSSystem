@@ -9,7 +9,7 @@ public class Register {
 	private static Refund currentRefund;
 	private static Order currentOrder;
 	private static Payment payment;
-	private CalculateSale currentCaculateSale;
+	private static CalculateSale currentCaculateSale;
 	private ClientList clist = ClientList.getInstance();
 	private ArrayList<Client> currentClientList = clist.getList();
 	
@@ -46,7 +46,10 @@ public class Register {
 			
 		}
 		System.out.println("ÃÑ ÁÖ¹® ±Ý¾×:"+order.getTotal());
+		
+		currentRefund.setOrderNumber(orderNumber);		
 		currentRefund.doRefund(order, orderNumber);
+		refundList.add(currentRefund);
 	}
 	
 	
@@ -61,14 +64,13 @@ public class Register {
 	}
 
 	/* caculate sale*/
-	public void makeCalculateSale() {
+	public static void makeCalculateSale() {
 		currentCaculateSale = new CalculateSale();
 	}
 
-	public int requestCalculateSale() {
+	public static void requestCalculateSale() {
 		if(currentCaculateSale.equals(null)) makeCalculateSale();
-		currentCaculateSale.calculate(currentOrder, currentRefund);
-		return currentCaculateSale.getCalculateSale();
+		currentCaculateSale.calculate(orderList, refundList);
 	}
 	
 	/* payment method*/
