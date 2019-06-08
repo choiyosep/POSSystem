@@ -1,20 +1,25 @@
 package POSSystem;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main { 
-	Menu menu = new Menu();
-	
 	public static void main(String[] arg) {
-		menu.
+		Tablet tablet = new Tablet();
+		
+		tablet.addFoodinfo(new FoodInfo("짜장면", 5000));
+		tablet.addFoodinfo(new FoodInfo("짬뽕", 6000));
+		tablet.addFoodinfo(new FoodInfo("볶음밥", 5500));
+		
+		ArrayList<FoodInfo> foodInfoList = tablet.getMenu();
+		
 		
 		do {
 			System.out.println("주문할 음식 번호를 선택하세요");
 			
 			
-		} while();
+		} while(true);
 	}
+	
+	
 	
 }
