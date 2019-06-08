@@ -53,6 +53,7 @@ public class Main {
 				 	orderNumber = sc.nextInt();
 				 	System.out.println("===================");
 				 	System.out.println("결제방식을 선택하세요.");
+				 	System.out.println("1. 현금 결제하기 2. 카드 결제하기 3. 상품권 결제하기  4. 적립금 결제하기");
 				 	paymentNumber = sc.nextInt();
 				 	
 				 	switch(paymentNumber) {
@@ -87,6 +88,7 @@ public class Main {
 					Register.enterRefundOrderNumber(orderNumber);
 					
 					System.out.println("결제방식을 선택하세요.");
+					System.out.println("1. 현금 결제하기 2. 카드 결제하기 3. 상품권 결제하기 4. 적립금 결제하기");
 				 	paymentNumber = sc.nextInt();
 				 	switch(paymentNumber) {
 				 		case(1) : //현금
