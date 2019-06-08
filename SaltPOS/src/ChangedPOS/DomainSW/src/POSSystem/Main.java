@@ -1,12 +1,14 @@
 package POSSystem;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Main { 
 	public static void main(String[] arg) {
 		Tablet tablet = new Tablet();
 		Order currentOrder;
-		OrderList orderList = new OrderList();
+		
+		Register register = new Register();
+		
 		tablet.addFoodinfo(new FoodInfo("Â¥Àå¸é", 5000));
 		tablet.addFoodinfo(new FoodInfo("Â«»Í", 6000));
 		tablet.addFoodinfo(new FoodInfo("ººÀ½¹ä", 5500));
@@ -32,8 +34,12 @@ public class Main {
 			tablet.selectMenu(menuNumber-1, count);
 		} while(true);
 		
-		orderList.insertOrder(currentOrder);
 		
+		Register.getOrderList().insertOrder(currentOrder);
+		
+		System.out.println("==============POS System===========");
+		
+				
 	
 	}
 	

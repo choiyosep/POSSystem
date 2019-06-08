@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class Register {
 	private static ArrayList<Refund> refundList = new ArrayList<>();
+	private static OrderList orderList = new OrderList();
+
 	private static Refund currentRefund;
 	private static Order currentOrder;
 	private CalculateSale currentCaculateSale;
@@ -18,7 +20,7 @@ public class Register {
 	}
 	
 	public static void enterOrderNumber(int orderNumber){
-		Order order = foodCourt.getOrderList().getOrderInfo(orderNumber);
+		Order order = orderList.getOrderInfo(orderNumber);
 		currentRefund.doRefund(order);
 	}
 	
@@ -26,11 +28,11 @@ public class Register {
 	/* info method */
 	
 	public static void addOrderInfo(){
-		foodCourt.getOrderList().insertOrder(currentOrder);
+		orderList.insertOrder(currentOrder);
 	}
 	
 	public static void addRefundInfo(){
-		foodCourt.getOrderList().insertRefund(currentRefund);
+		orderList.insertRefund(currentRefund);
 	}
 
 	/* caculate sale*/
@@ -46,21 +48,21 @@ public class Register {
 	
 	/* payment method*/
 	
-	public static void makeCashPayment() {
-		currentOrder.makePayment("CashPayment");
-	}
-	
-	public static void makeCreditPayment() {
-		currentOrder.makePayment("CreditPayment");		
-	}
-	
-	public static void makeGiftPayment() {
-		currentOrder.makePayment("GiftPayment");		
-	}
-	
-	public static void makePointPayment() {
-		currentOrder.makePayment("PointPayment");		
-	}
+//	public static void makeCashPayment() {
+//		currentOrder.makePayment("CashPayment");
+//	}
+//	
+//	public static void makeCreditPayment() {
+//		currentOrder.makePayment("CreditPayment");		
+//	}
+//	
+//	public static void makeGiftPayment() {
+//		currentOrder.makePayment("GiftPayment");		
+//	}
+//	
+//	public static void makePointPayment() {
+//		currentOrder.makePayment("PointPayment");		
+//	}
 
 	/* Client */
 	public void registerClient(String phoneNumber) {
@@ -93,5 +95,15 @@ public class Register {
 	public static void setCurrentRefund(Refund currentRefund) {
 		Register.currentRefund = currentRefund;
 	}
+
+	public static OrderList getOrderList() {
+		return orderList;
+	}
+
+	public static void setOrderList(OrderList orderList) {
+		Register.orderList = orderList;
+	}
+	
+	
 	
 }

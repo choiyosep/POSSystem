@@ -22,4 +22,11 @@ public class OrderedFood {
 	public void setFoodInfo(FoodInfo foodInfo) {
 		this.foodInfo = foodInfo;
 	}
+
+	@Override
+	public String toString() {
+		return "OrderedFood [quantity=" + quantity + ", foodInfo=" + foodInfo + "]";
+	}
+	
+	
 }

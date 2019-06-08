@@ -43,4 +43,13 @@ public class Order {
 	public void enterCustomer(String phone_number) {
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Order [orderNumber=" + orderNumber + ", price=" + price + ", orderedFoodList=" + orderedFoodList
+				+ ", payment=" + payment + "]";
+	}
+	
+	
+	
 }
