@@ -5,10 +5,15 @@ import java.util.ArrayList;
 public class Tablet {
 
 	private ArrayList<FoodInfo> foodInfoList = new ArrayList<FoodInfo>();
+
+	private static Order order = new Order();
+	// singleton
+	public static Order getInstance() {
+		return order;
+	}
 	
-	
-	public ArrayList<FoodInfo> getMenu(){
-		return this.foodInfoList;
+	public void getMenu(){
+		showMenu();
 	}
 	
 	public void showMenu() {
@@ -21,6 +26,14 @@ public class Tablet {
 		System.out.println();
 	}
 	
+	public void selectMenu(int id, int quantity) {
+		order.makeLineItem(foodInfoList.get(id), quantity);
+	}
+	
+	public Order orderMenu() {
+		return order;
+	}
+	
 	
 	public FoodInfo getFoodInfo(int foodNumber){
 		return foodInfoList.get(foodNumber);
@@ -30,10 +43,13 @@ public class Tablet {
 		foodInfoList.add(foodInfo);
 	}
 
-	public void selectMenu(int i, int count) {
-	
+	public void showOrderInfo() {
+		System.out.println("주문 완료");
+		System.out.println("주문번호는 "+ order.getOrderNumber() + "입니다.");
 		
 	}
+
+	
 	
 	
 }
