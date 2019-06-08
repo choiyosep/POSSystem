@@ -12,9 +12,11 @@ public class Tablet {
 	}
 	
 	public void showMenu() {
-		for(FoodInfo foodInfo : foodInfoList) {
-			
+		System.out.println("주문할 음식 번호를 선택하세요.");
+		for(int i=0; i<foodInfoList.size(); i++) {
+			System.out.print((i+1)+"."+foodInfoList.get(i).getName()+"  ");
 		}
+		System.out.print("0.주문종료");
 	
 		System.out.println();
 	}
