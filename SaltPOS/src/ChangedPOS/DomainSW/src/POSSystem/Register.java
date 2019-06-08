@@ -17,7 +17,7 @@ public class Register {
 	public void getScreen() {
 		System.out.println("1. 결제하기");
 		System.out.println("2. 환불하기");
-		System.out.println("3. 환불하기");
+		System.out.println("3. 정산하기");
 		System.out.println("기능을 선택하세요.");
 	}
 	
@@ -28,9 +28,26 @@ public class Register {
 		Register.currentRefund = new Refund(new Date().toString());
 	}
 	
-	public static void enterOrderNumber(int orderNumber){
+	public static void enterOrderNumber(int orderNumber) {
+		
+	}
+	
+	public static void enterRefundOrderNumber(int orderNumber){
 		Order order = orderList.getOrderInfo(orderNumber);
+<<<<<<< HEAD
 		currentOrder = order;
+=======
+		System.out.println("======주문 정보======");
+		System.out.println("주문번호:"+order.getOrderNumber());
+		ArrayList<OrderedFood> foodList = order.getOrderdedFoodList();
+		for(int i=0; i< foodList.size(); i++) {
+			FoodInfo food = foodList.get(i).getFoodInfo();
+			System.out.println(food.getName()+"("+food.getPrice()+"원) "+"* "+foodList.get(i).getQuantity()+"개 = "+foodList.get(i).getSubtotal()+"원");
+			
+		}
+		System.out.println("총 주문 금액:"+order.getTotal());
+		currentRefund.doRefund(order, orderNumber);
+>>>>>>> fdab680934a22f99da89cb11e9a42545a37c821c
 	}
 	
 	
