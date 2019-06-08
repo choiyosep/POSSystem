@@ -11,7 +11,6 @@ public class Register {
 	private static Payment payment;
 	private CalculateSale currentCaculateSale;
 	private ClientList clist = ClientList.getInstance();
-	private ArrayList<Client> currentClientList = clist.getList();
 	
 	
 	public void getScreen() {
@@ -29,14 +28,14 @@ public class Register {
 	}
 	
 	public static void enterOrderNumber(int orderNumber) {
-		
+		Order order = orderList.getOrderInfo(orderNumber);
+		currentOrder = order;
 	}
 	
 	public static void enterRefundOrderNumber(int orderNumber){
 		Order order = orderList.getOrderInfo(orderNumber);
-<<<<<<< HEAD
+
 		currentOrder = order;
-=======
 		System.out.println("======주문 정보======");
 		System.out.println("주문번호:"+order.getOrderNumber());
 		ArrayList<OrderedFood> foodList = order.getOrderdedFoodList();
@@ -47,7 +46,6 @@ public class Register {
 		}
 		System.out.println("총 주문 금액:"+order.getTotal());
 		currentRefund.doRefund(order, orderNumber);
->>>>>>> fdab680934a22f99da89cb11e9a42545a37c821c
 	}
 	
 	
@@ -103,11 +101,16 @@ public class Register {
 		
 	}
 	
+	public static void enterClientInfo(String phoneNumber) {
+		getPayment().showResult(currentClientList, total);
+		
+	}
+	
 	
 	/* Client */
 	public void registerClient(String phoneNumber) {
 		Client client = new Client(phoneNumber);
-		currentClientList.add(client);
+		currentClientList.(client);
 	}
 	
 	/* getter & setter */
@@ -153,4 +156,5 @@ public class Register {
 	public static void setPayment(Payment payment) {
 		Register.payment = payment;
 	}
+
 }

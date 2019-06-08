@@ -7,8 +7,10 @@ public class Main {
 		Tablet tablet = new Tablet();
 		Order currentOrder;
 		
+		ClientList clientList = new ClientList();
 		Register register = new Register();
-		
+		clientList.InsertPair("010-1234-5678", 0);
+		clientList.InsertPair("010-2357-7424", 0);
 		tablet.addFoodinfo(new FoodInfo("짜장면", 5000));
 		tablet.addFoodinfo(new FoodInfo("짬뽕", 6000));
 		tablet.addFoodinfo(new FoodInfo("볶음밥", 5500));
@@ -61,20 +63,26 @@ public class Main {
 				 			Register.makeCashPayment();
 				 			System.out.println("현금을 입력하세요.");
 				 			Register.enterCash(sc.nextInt());
+				 			System.out.println("적립금 적립를 위해 핸드폰 번호를 입력하세요.");
+				 			clientList.isClient()
+				 			
 				 			break;
 				 		case(2) :
 				 			Register.makeCreditPayment();
 				 			System.out.println("카드번호 입력하세요.");
 			 				Register.enterCreditInfo(sc2.nextLine());
+			 				System.out.println("적립금 적립를 위해 핸드폰 번호를 입력하세요.");
 				 			break;
 				 		case(3) :
 				 			Register.makeGiftPayment();
 				 			System.out.println("상품권번호을 입력하세요.");
 				 			Register.enterGiftInfo(sc2.nextLine());
+				 			System.out.println("적립금 적립를 위해 핸드폰 번호를 입력하세요.");
 				 			break;
 				 		case(4) :
 				 			Register.makePointPayment();
 				 			System.out.println("핸드폰 번호를 입력하세요.");
+				 			Register.enterClientInfo(sc2.nextLine());
 				 			break;
 				 	}
 			
