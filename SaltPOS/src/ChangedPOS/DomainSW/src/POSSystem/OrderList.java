@@ -10,9 +10,14 @@ public class OrderList {
 		orderLists.add(order);
 	}
 	public Order getOrderInfo(int orderNumber){
-		Order order;
-		order = orderLists.get(orderNumber-1);
-		return order;
+//		Order order = null;
+		
+//		for(int i=0; i<orderLists.size(); i++) {
+//			if(orderLists.get(i).getOrderNumber() == orderNumber)
+//				order = orderLists.get(i);
+//		}
+		
+		return orderLists.get(orderNumber);
 	}
 	public void insertRefund(Refund refund){
 		refundLists.add(refund);

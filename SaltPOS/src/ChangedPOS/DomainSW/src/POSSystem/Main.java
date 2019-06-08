@@ -78,6 +78,10 @@ public class Main {
 				 	
  					break;
 				case(2) : // 환불
+					Register.makeRefund();
+					System.out.println("주문번호를 입력하세요.");
+				 	orderNumber = sc.nextInt();
+					Register.enterOrderNumber(orderNumber);
 					
 					break;
 				case(3) : // 정산

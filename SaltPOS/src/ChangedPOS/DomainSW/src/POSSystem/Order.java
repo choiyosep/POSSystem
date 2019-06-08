@@ -3,19 +3,12 @@ package POSSystem;
 import java.util.ArrayList;
 
 public class Order {
-
-	public static int lastOrderNumber=0;
-	
 	private int orderNumber;
 	private int price = 0;
 	private ArrayList<OrderedFood> orderedFoodList = new ArrayList<>();
 	private Payment payment;
 	
-	Order(){
-		setOrderNumber(Order.lastOrderNumber + 1);
-		Order.lastOrderNumber++;
-	}
-
+	
 	public int getOrderNumber() {
 		return orderNumber;
 	}

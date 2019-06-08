@@ -23,13 +23,13 @@ public class Register {
 	
 	/* refund method */
 	
-	public static void makeNewRefund(){
+	public static void makeRefund(){
 		Register.currentRefund = new Refund(new Date().toString());
 	}
 	
 	public static void enterOrderNumber(int orderNumber){
 		Order order = orderList.getOrderInfo(orderNumber);
-		currentRefund.doRefund(order);
+		currentRefund.doRefund(order, orderNumber);
 	}
 	
 	
@@ -118,7 +118,6 @@ public class Register {
 
 	public static void enterCash(int cash) {
 		currentOrder.showChange();
-		
 	}
 
 
