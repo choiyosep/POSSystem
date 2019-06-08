@@ -35,9 +35,8 @@ public class Main {
 			tablet.selectMenu(menuNumber-1, count);
 		} while(true);
 		
-		
 		Register.getOrderList().insertOrder(currentOrder);
-		Register.setCurrentOrder(currentOrder);
+		
 		
 		System.out.println("==============POS System===========");
 		outerloop:
@@ -51,6 +50,7 @@ public class Main {
 				case(1) : // 결제
 					System.out.println("주문번호를 입력하세요.");
 				 	orderNumber = sc.nextInt();
+				 	Register.enterOrderNumber(orderNumber);
 				 	System.out.println("결제방식을 선택하세요.");
 				 	paymentNumber = sc.nextInt();
 				 	

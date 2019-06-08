@@ -30,7 +30,7 @@ public class Register {
 	
 	public static void enterOrderNumber(int orderNumber){
 		Order order = orderList.getOrderInfo(orderNumber);
-		currentRefund.doRefund(order, orderNumber);
+		currentOrder = order;
 	}
 	
 	
