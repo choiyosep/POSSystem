@@ -12,7 +12,8 @@ public class Tablet {
 	}
 	
 	public void showMenu() {
-		for( FoodInfo foodInfo : foodInfoList) {
+		for(FoodInfo foodInfo : foodInfoList) {
+			
 		}
 	
 		System.out.println();
