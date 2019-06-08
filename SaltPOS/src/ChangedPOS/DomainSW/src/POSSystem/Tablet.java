@@ -19,7 +19,7 @@ public class Tablet {
 	public void showMenu() {
 		System.out.println("주문할 음식 번호를 선택하세요.");
 		for(int i=0; i<foodInfoList.size(); i++) {
-			System.out.print((i+1)+"."+foodInfoList.get(i).getName()+"  ");
+			System.out.print((i+1)+"."+foodInfoList.get(i).getName()+"("+foodInfoList.get(i).getPrice()+"원) ");
 		}
 		System.out.print("0.주문종료");
 	
