@@ -21,7 +21,8 @@ public class GiftPayment extends Payment {
 	@Override
 	public void showResult(String info, int total) {
 		// Nothing
-		
+		System.out.println("상품권번호 :" + info);
+		System.out.println("결제금액 : " + total);
 	}
 
 }

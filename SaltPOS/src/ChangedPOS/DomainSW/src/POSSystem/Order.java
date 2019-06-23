@@ -26,7 +26,7 @@ public class Order {
 	
 	public void makeLineItem(FoodInfo foodInfo,int quantity){
 		OrderedFood orderedFood = new OrderedFood(foodInfo,quantity);
-		orderedFoodList.add(orderedFood);	
+		orderedFoodList.add(orderedFood);
 	}
 	
 	//public Payment makePayment(String paymentType){
