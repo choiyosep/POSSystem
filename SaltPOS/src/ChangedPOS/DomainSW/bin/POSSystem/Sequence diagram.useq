@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.3" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="POSSystem.Main" project="DomainSW" file="/DomainSW/src/POSSystem/Main.java" 
+    binary="false" label="main" type="class" autoSize="false">    
+    <position height="647" width="130" x="0" y="0"/>    
+    <execution id="2">      
+      <position height="162" width="82" x="5" y="132"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="135" width="82" x="5" y="347"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="81" width="82" x="5" y="540"/>    
+    </execution>  
+  </object>  
+  <object id="11" language="java" name="POSSystem.Tablet" project="DomainSW" file="/DomainSW/src/POSSystem/Tablet.java" 
+    binary="false" label="tablet" type="class" autoSize="false">    
+    <position height="315" width="149" x="0" y="0"/>    
+    <execution id="4">      
+      <position height="108" width="145" x="91" y="159"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="27" width="0" x="0" y="213"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="81" width="145" x="91" y="374"/>    
+    </execution>    
+    <execution id="10">      
+      <position height="27" width="145" x="91" y="567"/>    
+    </execution>  
+  </object>  
+  <object id="16" language="java" name="POSSystem.Order" project="DomainSW" file="/DomainSW/src/POSSystem/Order.java" 
+    binary="false" label="order" type="class" autoSize="false">    
+    <position height="539" width="216" x="149" y="0"/>    
+    <execution id="15">      
+      <position height="27" width="0" x="0" y="401"/>    
+    </execution>  
+  </object>  
+  <object id="17" language="java" name="POSSystem.Main" project="DomainSW" file="/DomainSW/src/POSSystem/Main.java" 
+    binary="false" label="main1" type="class" autoSize="false">    
+    <position height="245" width="194" x="451" y="0"/>    
+    <execution id="18">      
+      <position height="135" width="82" x="456" y="138"/>    
+    </execution>    
+    <execution id="21">      
+      <position height="305" width="190" x="500" y="323"/>    
+    </execution>    
+    <execution id="24">      
+      <position height="480" width="190" x="500" y="686"/>    
+    </execution>  
+  </object>  
+  <object id="27" language="java" name="POSSystem.Register" project="DomainSW" 
+    file="/DomainSW/src/POSSystem/Register.java" binary="false" label="register" type="class" autoSize="false">    
+    <position height="218" width="262" x="645" y="0"/>    
+    <execution id="20">      
+      <position height="81" width="97" x="542" y="165"/>    
+    </execution>    
+    <execution id="23">      
+      <position height="251" width="258" x="694" y="350"/>    
+    </execution>    
+    <execution id="31">      
+      <position height="27" width="0" x="0" y="404"/>    
+    </execution>    
+    <execution id="26">      
+      <position height="426" width="258" x="694" y="713"/>    
+    </execution>    
+    <execution id="35">      
+      <position height="27" width="0" x="0" y="767"/>    
+    </execution>    
+    <execution id="37">      
+      <position height="27" width="0" x="0" y="834"/>    
+    </execution>  
+  </object>  
+  <object id="42" language="java" name="POSSystem.OrderList" project="DomainSW" 
+    file="/DomainSW/src/POSSystem/OrderList.java" binary="false" label="orderList" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="29">      
+      <position height="27" width="0" x="0" y="192"/>    
+    </execution>  
+  </object>  
+  <object id="43" language="java" name="POSSystem.Order" project="DomainSW" file="/DomainSW/src/POSSystem/Order.java" 
+    binary="false" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="39">      
+      <position height="184" width="0" x="0" y="874"/>    
+    </execution>  
+  </object>  
+  <object id="48" language="java" name="java.util.ArrayList" project="DomainSW" 
+    file="C:/Program Files/Java/jre1.8.0_201/lib/rt.jar" binary="true" label="orderedFoodList" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="45">      
+      <position height="27" width="0" x="0" y="950"/>    
+    </execution>  
+  </object>  
+  <object id="49" language="java" name="POSSystem.OrderedFood" project="DomainSW" 
+    file="/DomainSW/src/POSSystem/OrderedFood.java" binary="false" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="47">      
+      <position height="27" width="0" x="0" y="1004"/>    
+    </execution>  
+  </object>  
+  <object id="50" language="java" name="POSSystem.Payment" project="DomainSW" 
+    file="/DomainSW/src/POSSystem/Payment.java" binary="false" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="41">      
+      <position height="27" width="0" x="0" y="1085"/>    
+    </execution>  
+  </object>  
+  <object id="51" language="java" name="POSSystem.PaymentFactory" project="DomainSW" 
+    file="/DomainSW/src/POSSystem/PaymentFactory.java" binary="false" label="paymentFactory" type="class" 
+    autoSize="false">    
+    <position height="600" width="244" x="951" y="0"/>    
+    <execution id="33">      
+      <position height="130" width="0" x="0" y="444"/>    
+    </execution>  
+  </object>  
+  <object id="54" language="java" name="POSSystem.CashPayment" project="DomainSW" 
+    file="/DomainSW/src/POSSystem/CashPayment.java" binary="false" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="53">      
+      <position height="27" width="0" x="0" y="520"/>    
+    </execution>  
+  </object>  
+  <combined-fragment id="55" interaction-operator="ALT">    
+    <interaction-operand id="56" constraint="case &quot;CashPayment&quot;:">      
+      <fragment refId="52"/>    
+    </interaction-operand>    
+    <interaction-operand id="57" constraint="case &quot;CreditPayment&quot;:"/>    
+    <interaction-operand id="58" constraint="case &quot;GiftPayment&quot;:"/>    
+    <interaction-operand id="59" constraint="case &quot;PointPayment&quot;:"/>  
+  </combined-fragment>  
+  <combined-fragment id="60" interaction-operator="LOOP">    
+    <interaction-operand id="61" constraint="for:i&lt;orderedFoodList.size()">      
+      <fragment refId="46"/>      
+      <fragment refId="44"/>    
+    </interaction-operand>  
+  </combined-fragment>  
+  <message id="3" operation="getMenu():void" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="selectMenu(int,int):void" asynchronous="false">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="9" operation="orderMenu():POSSystem.Order" asynchronous="false">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="12" operation="showMenu():void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="14" operation="makeLineItem(POSSystem.FoodInfo,int):void" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>  
+  <message id="19" operation="enterOrderNumber(int):void" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>  
+  <message id="22" operation="makeCashPayment():void" asynchronous="false">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="23"/>  
+  </message>  
+  <message id="25" operation="enterCash(int):void" asynchronous="false">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="26"/>  
+  </message>  
+  <message id="28" operation="getOrderInfo(int):POSSystem.Order" asynchronous="false">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="29"/>  
+  </message>  
+  <message id="30" operation="setPayment(POSSystem.Payment):void" asynchronous="false">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="31"/>  
+  </message>  
+  <message id="32" operation="makePayment(java.lang.String):POSSystem.Payment" asynchronous="false">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="33"/>  
+  </message>  
+  <message id="34" operation="getPayment():POSSystem.Payment" asynchronous="false">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="35"/>  
+  </message>  
+  <message id="36" operation="getCurrentOrder():POSSystem.Order" asynchronous="false">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="37"/>  
+  </message>  
+  <message id="38" operation="getTotal():int" asynchronous="false">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="39"/>  
+  </message>  
+  <message id="40" operation="showChange(int,int):void" asynchronous="false">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="41"/>  
+  </message>  
+  <message id="44" operation="get(int):E" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="45"/>  
+  </message>  
+  <message id="46" operation="getSubtotal():int" asynchronous="false">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="47"/>  
+  </message>  
+  <message id="52" operation="CashPayment()" asynchronous="false">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="53"/>  
+  </message>
+</sequence-diagram>

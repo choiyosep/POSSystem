@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class ClientList {
 	
     private static HashMap<String, Integer> clientsList = new HashMap<>();
-
+  
     private static ClientList instance = new ClientList();
 
     public static ClientList getInstance() {
