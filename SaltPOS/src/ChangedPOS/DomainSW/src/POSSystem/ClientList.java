@@ -1,28 +1,34 @@
 package POSSystem;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
-class ClientList {
-
-    private ArrayList<Client> clientsList = new ArrayList<>();
+public class ClientList {
+	
+    private static HashMap<String, Integer> clientsList = new HashMap<>();
 
     private static ClientList instance = new ClientList();
 
     public static ClientList getInstance() {
         return instance;
     }
-
-    public ArrayList<Client> getList() {
+    
+    public HashMap<String, Integer> getList() {
         return clientsList;
     }
-
-    public Client enterClientInfo(String phone_number) {
-        for(Client client : clientsList) {
-            if(client.getphoneNumber().equals(phone_number)) {
-                return client;
-            }
+    
+    public boolean isClient(String phoneNumber) {
+    	if(clientsList.containsKey(phoneNumber)) {
+    		return true;
         }
-        return null;
+    	return false;
     }
+    
+    public void InsertPair(String phoneNumber, int point) {
+        if(!isClient(phoneNumber)) {
+        	clientsList.put(phoneNumber, point);
+        }
+    }
+   
+   
 
 }

@@ -1,12 +1,11 @@
 package POSSystem;
 
-//import java.util.ArrayList;
 
 public class Client {
 
     private String phoneNumber;
     private int point = 0;
-
+   
     public Client(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
