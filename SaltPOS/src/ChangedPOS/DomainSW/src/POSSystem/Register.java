@@ -35,8 +35,6 @@ public class Register {
 	
 	public static void enterRefundOrderNumber(int orderNumber){
 		Order order = orderList.getOrderInfo(orderNumber);
-
-		currentOrder = order;
 		System.out.println("======주문 정보======");
 		System.out.println("주문번호:"+order.getOrderNumber());
 		ArrayList<OrderedFood> foodList = order.getOrderdedFoodList();
@@ -47,7 +45,6 @@ public class Register {
 		}
 		System.out.println("총 주문 금액:"+order.getTotal());
 		
-		currentRefund.setOrderNumber(orderNumber);		
 		currentRefund.doRefund(order, orderNumber);
 		refundList.add(currentRefund);
 
@@ -70,12 +67,11 @@ public class Register {
 	}
 
 	public static void requestCalculateSale() {
-		if(currentCaculateSale.equals(null)) makeCalculateSale();
 		currentCaculateSale.calculate(orderList, refundList);
 	}
 	
 	/* payment method*/
-	
+		
 	public static void makeCashPayment() {
 		setPayment(paymentFactory.makePayment("CashPayment"));
 	}
@@ -93,21 +89,23 @@ public class Register {
 	}
 	
 	public static void enterCash(int cash) {
-		getPayment().showChange(cash, getCurrentOrder().getTotal());
+		int total = currentOrder.getTotal();
+		payment.showChange(cash, total);
 	}
 
 	public static void enterCreditInfo(String cardNumber) {
-		getPayment().showResult(cardNumber, currentOrder.getTotal());
+		int total = currentOrder.getTotal();
+		payment.showResult(cardNumber, total);
 	}
 
 	public static void enterGiftInfo(String giftNumber) {
-		getPayment().showResult(giftNumber, currentOrder.getTotal());
-		
+		int total = currentOrder.getTotal();
+		payment.showChange(giftNumber, total);
 	}
 	
 	public static void enterClientInfo(String phoneNumber) {
-		getPayment().showResult(currentClientList, total);
-		
+		int total = currentOrder.getTotal();
+		payment.showChange(phoneNumber, total);		
 	}
 	
 	
@@ -161,12 +159,9 @@ public class Register {
 		Register.payment = payment;
 	}
 
-<<<<<<< HEAD
-=======
 
 	public static void showRefundResult() {
 		System.out.println(currentOrder.getTotal()+"원 환불 완료되었습니다!! 감사합니다");
 		
 	}
->>>>>>> e9e775767378bb9ea625fa7f15c33ddc6b1433db
 }

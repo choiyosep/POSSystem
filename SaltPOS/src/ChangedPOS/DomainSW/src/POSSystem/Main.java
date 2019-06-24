@@ -26,8 +26,8 @@ public class Main {
 			menuNumber = sc.nextInt();
 			if(menuNumber == 0) {
 				//주문완료
-				currentOrder = tablet.orderMenu();
-				tablet.showOrderInfo();
+				tablet.orderMenu();
+				//tablet의 주문정보를 POS로 전송		
 				break;
 			}
 			
@@ -37,7 +37,7 @@ public class Main {
 			tablet.selectMenu(menuNumber-1, count);
 		} while(true);
 		
-		Register.getOrderList().insertOrder(currentOrder);
+		
 		
 		
 		System.out.println("==============POS System===========");
@@ -65,8 +65,7 @@ public class Main {
 				 			System.out.println("현금을 입력하세요.");
 				 			Register.enterCash(sc.nextInt());
 				 			System.out.println("적립금 적립를 위해 핸드폰 번호를 입력하세요.");
-				 			clientList.isClient()
-				 			
+				 			clientList.isClient(sc2.next());
 				 			break;
 				 		case(2) :
 				 			Register.makeCreditPayment();

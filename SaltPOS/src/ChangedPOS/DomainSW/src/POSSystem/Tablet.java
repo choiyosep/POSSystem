@@ -6,9 +6,11 @@ public class Tablet {
 
 	private ArrayList<FoodInfo> foodInfoList = new ArrayList<FoodInfo>();
 
-	private static Order order = new Order();
+	private static Order order;
 	// singleton
 	public static Order getInstance() {
+		if(order==null)
+			order = new Order();
 		return order;
 	}
 	
@@ -27,11 +29,14 @@ public class Tablet {
 	}
 	
 	public void selectMenu(int id, int quantity) {
-		order.makeLineItem(foodInfoList.get(id), quantity);
+		Tablet.getInstance().makeLineItem(foodInfoList.get(id), quantity);
 	}
 	
-	public Order orderMenu() {
-		return order;
+	public void orderMenu() {
+		//주문정보 출력
+		this.showOrderInfo();
+		//POS로 주문정보 전송
+		Register.getOrderList().insertOrder(order);
 	}
 	
 	
