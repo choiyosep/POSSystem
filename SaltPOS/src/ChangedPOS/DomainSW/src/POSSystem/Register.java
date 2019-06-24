@@ -9,11 +9,19 @@ public class Register {
 	private static Refund currentRefund;
 	private static Order currentOrder;
 	private static Payment payment;
-	private static CalculateSale currentCaculateSale;
-	private ClientList clist = ClientList.getInstance();
+	private static CalculateSale currentCaculateSale;	
+	public static ClientList clientList = ClientList.getInstance();
 	
 	
-	public void getScreen() {
+	public static void startUp() {
+		clientList.InsertPair("010-1234-5678", 0);
+		clientList.InsertPair("010-2357-7424", 0);
+	}
+	
+	
+	
+	
+	public static void getScreen() {
 		System.out.println("=============기능 선택==========");
 		System.out.println("1. 결제하기");
 		System.out.println("2. 환불하기");
@@ -100,19 +108,32 @@ public class Register {
 
 	public static void enterGiftInfo(String giftNumber) {
 		int total = currentOrder.getTotal();
-		payment.showChange(giftNumber, total);
+		payment.showResult(giftNumber, total);
 	}
 	
-	public static void enterClientInfo(String phoneNumber) {
-		int total = currentOrder.getTotal();
-		payment.showChange(phoneNumber, total);		
+	public static boolean enterClientInfo(String phoneNumber) {
+		Client client = clientList.isClient(phoneNumber);
+        int currentPoint, orderPay;
+        if(client != null) {
+           currentPoint = client.getPoint();
+           orderPay = Register.getCurrentOrder().getTotal();
+           if(currentPoint >= orderPay) {
+              System.out.println("현재 적립금 : "+ currentPoint);
+              System.out.println("총 주문 금액 : "+ orderPay);
+              currentPoint -= orderPay;
+              System.out.println("남은 적립금 : "+ currentPoint);
+           } else {
+              System.out.println("적립금이 부족합니다.");
+           }
+           return false;
+        }
+        return true;
 	}
 	
 	
 	/* Client */
 	public void registerClient(String phoneNumber) {
 		Client client = new Client(phoneNumber);
-		currentClientList.(client);
 	}
 	
 	/* getter & setter */
@@ -143,16 +164,7 @@ public class Register {
 
 	public static OrderList getOrderList() {
 		return orderList;
-	}
-
-	public static void setOrderList(OrderList orderList) {
-		Register.orderList = orderList;
-	}
-
-
-	public static Payment getPayment() {
-		return payment;
-	}
+	}	
 
 
 	public static void setPayment(Payment payment) {
@@ -163,5 +175,20 @@ public class Register {
 	public static void showRefundResult() {
 		System.out.println(currentOrder.getTotal()+"원 환불 완료되었습니다!! 감사합니다");
 		
+	}
+	
+	public static void showPointInfo(Client client) {
+		System.out.println("총 적립금: " + client.getPoint());
+	}
+
+
+	public static boolean enterClientPhoneInfo(String phoneNumber) {
+		Client client = clientList.isClient(phoneNumber);
+		if (client != null) {
+			client.setPoint(Tablet.getOrder());
+			Register.showPointInfo(client);
+			return false;
+		}		
+		return true;
 	}
 }

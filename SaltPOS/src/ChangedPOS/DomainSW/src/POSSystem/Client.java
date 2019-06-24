@@ -9,6 +9,10 @@ public class Client {
     public Client(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+    public Client(String phoneNumber, int point) {
+        this(phoneNumber);
+        this.point = point;
+    }
 
     public String getphoneNumber() {
         return phoneNumber;
@@ -26,4 +30,7 @@ public class Client {
         this.point += order.getTotal() / 100 * 5;
     }
     
+    public void subPoint(int point) {
+       this.point -= point;
+    }
 }

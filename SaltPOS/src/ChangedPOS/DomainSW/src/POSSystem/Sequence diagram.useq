@@ -184,7 +184,7 @@
       <position height="162" width="82" x="3072" y="129"/>    
     </execution>    
     <execution id="79">      
-      <position height="346" width="82" x="3072" y="349"/>    
+      <position height="346" width="82" x="3072" y="356"/>    
     </execution>  
   </object>  
   <object id="82" language="java" name="POSSystem.Register" project="DomainSW" 
@@ -193,32 +193,32 @@
     <execution id="78">      
       <position height="108" width="338" x="3158" y="156"/>    
     </execution>    
-    <execution id="81">      
-      <position height="292" width="338" x="3158" y="376"/>    
-    </execution>    
     <execution id="84">      
       <position height="27" width="0" x="0" y="210"/>    
+    </execution>    
+    <execution id="81">      
+      <position height="292" width="338" x="3158" y="383"/>    
     </execution>  
   </object>  
   <object id="89" language="java" name="POSSystem.Order" project="DomainSW" file="/DomainSW/src/POSSystem/Order.java" 
     binary="false" label="currentOrder" type="class" autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
     <execution id="86">      
-      <position height="184" width="0" x="0" y="403"/>    
+      <position height="184" width="0" x="0" y="410"/>    
     </execution>  
   </object>  
   <object id="92" language="java" name="POSSystem.OrderedFood" project="DomainSW" 
     file="/DomainSW/src/POSSystem/OrderedFood.java" binary="false" type="class" autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
     <execution id="91">      
-      <position height="27" width="0" x="0" y="533"/>    
+      <position height="27" width="0" x="0" y="540"/>    
     </execution>  
   </object>  
   <object id="93" language="java" name="POSSystem.Payment" project="DomainSW" 
     file="/DomainSW/src/POSSystem/Payment.java" binary="false" label="payment" type="class" autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
     <execution id="88">      
-      <position height="27" width="0" x="0" y="614"/>    
+      <position height="27" width="0" x="0" y="621"/>    
     </execution>  
   </object>  
   <object id="94" language="java" name="POSSystem.Main" project="DomainSW" file="/DomainSW/src/POSSystem/Main.java" 
@@ -370,48 +370,60 @@
       <position height="27" width="0" x="0" y="697"/>    
     </execution>  
   </object>  
-  <combined-fragment id="156" interaction-operator="ALT">    
-    <interaction-operand id="157" constraint="case &quot;CashPayment&quot;:">      
+  <object id="156" language="java" name="POSSystem.Main" project="DomainSW" file="/DomainSW/src/POSSystem/Main.java" 
+    binary="false" label="main10" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="682" y="0"/>    
+    <execution id="157">      
+      <position height="81" width="82" x="7043" y="125"/>    
+    </execution>  
+  </object>  
+  <object id="160" language="java" name="POSSystem.Register" project="DomainSW" 
+    file="/DomainSW/src/POSSystem/Register.java" binary="false" label="register8" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="822" y="0"/>    
+    <execution id="159">      
+      <position height="27" width="82" x="7129" y="152"/>    
+    </execution>  
+  </object>  
+  <combined-fragment id="161" interaction-operator="ALT">    
+    <interaction-operand id="162" constraint="case &quot;CashPayment&quot;:">      
       <fragment refId="53"/>    
     </interaction-operand>    
-    <interaction-operand id="158" constraint="case &quot;CreditPayment&quot;:">      
+    <interaction-operand id="163" constraint="case &quot;CreditPayment&quot;:">      
       <fragment refId="55"/>    
     </interaction-operand>    
-    <interaction-operand id="159" constraint="case &quot;GiftPayment&quot;:">      
+    <interaction-operand id="164" constraint="case &quot;GiftPayment&quot;:">      
       <fragment refId="57"/>    
     </interaction-operand>    
-    <interaction-operand id="160" constraint="case &quot;PointPayment&quot;:">      
+    <interaction-operand id="165" constraint="case &quot;PointPayment&quot;:">      
       <fragment refId="59"/>    
     </interaction-operand>  
   </combined-fragment>  
-  <combined-fragment id="161" interaction-operator="LOOP">    
-    <interaction-operand id="162" constraint="for:i&lt;orderedFoodList.size()">      
-      <fragment refId="90"/>    
-    </interaction-operand>  
-  </combined-fragment>  
-  <combined-fragment id="163" interaction-operator="LOOP">    
-    <interaction-operand id="164" constraint="for:i&lt;orderedFoodList.size()">      
+  <combined-fragment id="166" interaction-operator="LOOP">    
+    <interaction-operand id="167" constraint="for:i&lt;orderedFoodList.size()">      
       <fragment refId="121"/>    
     </interaction-operand>  
   </combined-fragment>  
-  <combined-fragment id="165" interaction-operator="LOOP">    
-    <interaction-operand id="166" constraint="for:i&lt;orderedFoodList.size()">      
+  <combined-fragment id="168" interaction-operator="LOOP">    
+    <interaction-operand id="169" constraint="for:i&lt;orderedFoodList.size()">      
       <fragment refId="132"/>    
     </interaction-operand>  
   </combined-fragment>  
-  <combined-fragment id="167" interaction-operator="LOOP">    
-    <interaction-operand id="168" constraint="for:i&lt;oList.size()">      
-      <fragment refId="169"/>    
-    </interaction-operand>  
-  </combined-fragment>  
   <combined-fragment id="170" interaction-operator="LOOP">    
-    <interaction-operand id="171" constraint="for:i&lt;oList.size()">      
+    <interaction-operand id="171" constraint="for:i&lt;oList.size()"/>  
+  </combined-fragment>  
+  <combined-fragment id="172" interaction-operator="LOOP">    
+    <interaction-operand id="173" constraint="for:i&lt;oList.size()">      
       <fragment refId="148"/>    
     </interaction-operand>  
   </combined-fragment>  
-  <combined-fragment id="172" interaction-operator="LOOP">    
-    <interaction-operand id="173" constraint="for:i&lt;refundList.size()">      
+  <combined-fragment id="174" interaction-operator="LOOP">    
+    <interaction-operand id="175" constraint="for:i&lt;refundList.size()">      
       <fragment refId="150"/>    
+    </interaction-operand>  
+  </combined-fragment>  
+  <combined-fragment id="176" interaction-operator="LOOP">    
+    <interaction-operand id="177" constraint="for:i&lt;orderedFoodList.size()">      
+      <fragment refId="90"/>    
     </interaction-operand>  
   </combined-fragment>  
   <message id="3" operation="getMenu():void" asynchronous="false">    
@@ -426,7 +438,7 @@
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="10"/>  
   </message>  
-  <message id="11" operation="getInstance():POSSystem.Order" asynchronous="false">    
+  <message id="11" asynchronous="false">    
     <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="12"/>  
   </message>  
@@ -498,7 +510,7 @@
     <end type="SOURCE" refId="66"/>    
     <end type="TARGET" refId="68"/>  
   </message>  
-  <message id="70" operation="getPayment():POSSystem.Payment" asynchronous="false">    
+  <message id="70" asynchronous="false">    
     <end type="SOURCE" refId="68"/>    
     <end type="TARGET" refId="71"/>  
   </message>  
@@ -506,11 +518,11 @@
     <end type="SOURCE" refId="68"/>    
     <end type="TARGET" refId="73"/>  
   </message>  
-  <message id="77" operation="makeGiftPayment():void" asynchronous="false">    
+  <message id="77" operation="makePointPayment():void" asynchronous="false">    
     <end type="SOURCE" refId="76"/>    
     <end type="TARGET" refId="78"/>  
   </message>  
-  <message id="80" operation="enterGiftInfo(java.lang.String):void" asynchronous="false">    
+  <message id="80" operation="enterClientInfo(java.lang.String):void" asynchronous="false">    
     <end type="SOURCE" refId="79"/>    
     <end type="TARGET" refId="81"/>  
   </message>  
@@ -522,7 +534,7 @@
     <end type="SOURCE" refId="81"/>    
     <end type="TARGET" refId="86"/>  
   </message>  
-  <message id="87" operation="showChange(int,int):void" asynchronous="false">    
+  <message id="87" operation="showResult(java.lang.String,int):void" asynchronous="false">    
     <end type="SOURCE" refId="81"/>    
     <end type="TARGET" refId="88"/>  
   </message>  
@@ -606,5 +618,9 @@
   <message id="152" operation="showCalculateResult(int,int):void" asynchronous="false">    
     <end type="SOURCE" refId="146"/>    
     <end type="TARGET" refId="153"/>  
+  </message>  
+  <message id="158" asynchronous="false">    
+    <end type="SOURCE" refId="157"/>    
+    <end type="TARGET" refId="159"/>  
   </message>
 </sequence-diagram>
