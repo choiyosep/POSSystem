@@ -111,23 +111,7 @@ public class Register {
 		payment.showResult(giftNumber, total);
 	}
 	
-	public static boolean enterClientPhoneInfo(String phoneNumber) {
-		Client client = clientList.isClient(phoneNumber);
-        int currentPoint, orderPay;
-        if(client != null) {
-           currentPoint = client.getPoint();
-           orderPay = Register.getCurrentOrder().getTotal();
-           if(currentPoint >= orderPay) {
-        	 payment.showChange(currentPoint, orderPay);
-        	 //포인트 차감
-        	 client.subPoint(orderPay);
-           } else {
-              System.out.println("적립금이 부족합니다.");
-           }
-           return false;
-        }
-        return true;
-	}
+
 	
 	
 	/* Client */
@@ -179,15 +163,33 @@ public class Register {
 	public static void showPointInfo(Client client) {
 		System.out.println("총 적립금: " + client.getPoint());
 	}
-
-
-	public static boolean enterClientInfo(String phoneNumber) {
-		Client client = clientList.isClient(phoneNumber);
+	
+	public static boolean enterClientPhoneInfo(String phoneNumber) {     
+        Client client = clientList.isClient(phoneNumber);
 		if (client != null) {
 			client.setPoint(Tablet.getOrder());
 			Register.showPointInfo(client);
 			return false;
 		}
 		return true;
+	}
+
+
+	public static boolean enterClientInfo(String phoneNumber) {
+		Client client = clientList.isClient(phoneNumber);
+        int currentPoint, orderPay;
+        if(client != null) {
+           currentPoint = client.getPoint();
+           orderPay = Register.getCurrentOrder().getTotal();
+           if(currentPoint >= orderPay) {
+        	 payment.showChange(currentPoint, orderPay);
+        	 //포인트 차감
+        	 client.subPoint(orderPay);
+           } else {
+              System.out.println("적립금이 부족합니다.");
+           }
+           return false;
+        }
+        return true;
 	}
 }
