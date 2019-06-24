@@ -34,14 +34,15 @@ public class Tablet {
 	}
 	
 	public static void selectMenu(int id, int quantity) {
-		Tablet.getOrder().makeLineItem(foodInfoList.get(id), quantity);
+		Order order = Tablet.getOrder();
+		order.makeLineItem(foodInfoList.get(id), quantity);
 	}
 	
 	public static void orderMenu() {
 		//주문정보 출력
 		showOrderInfo();
 		//POS로 주문정보 전송
-		Register.getOrderList().insertOrder(order);
+		Register.addOrderInfo(order);
 	}
 	
 	

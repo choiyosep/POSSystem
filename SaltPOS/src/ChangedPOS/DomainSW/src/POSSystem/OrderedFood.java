@@ -32,11 +32,5 @@ public class OrderedFood {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
-	@Override
-	public String toString() {
-		return "OrderedFood [quantity=" + quantity + ", foodInfo=" + foodInfo + "]";
-	}
-	
 	
 }

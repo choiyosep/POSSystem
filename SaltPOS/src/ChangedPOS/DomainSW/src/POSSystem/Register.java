@@ -10,10 +10,11 @@ public class Register {
 	private static Order currentOrder;
 	private static Payment payment;
 	private static CalculateSale currentCaculateSale;	
-	public static ClientList clientList = ClientList.getInstance();
+	public static ClientList clientList ;
 	
 	
 	public static void startUp() {
+		clientList= ClientList.getInstance();
 		clientList.InsertPair("010-1234-5678", 50000);
 		clientList.InsertPair("010-2357-7424", 0);
 	}
@@ -61,13 +62,10 @@ public class Register {
 	
 	/* info method */
 	
-	public static void addOrderInfo(){
-		orderList.insertOrder(currentOrder);
+	public static void addOrderInfo(Order order){
+		orderList.insertOrder(order);
 	}
 	
-	public static void addRefundInfo(){
-		orderList.insertRefund(currentRefund);
-	}
 
 	/* caculate sale*/
 	public static void makeCalculateSale() {
@@ -113,19 +111,8 @@ public class Register {
 	
 
 	
-	
-	/* Client */
-	public void registerClient(String phoneNumber) {
-		Client client = new Client(phoneNumber);
-	}
-	
-	/* getter & setter */
-	
 	public static Order getCurrentOrder() {
 		return currentOrder;
-	}
-	public static void setCurrentOrder(Order currentOrder) {
-		Register.currentOrder = currentOrder;
 	}
 	
 	
@@ -167,7 +154,7 @@ public class Register {
 	public static boolean enterClientPhoneInfo(String phoneNumber) {     
         Client client = clientList.isClient(phoneNumber);
 		if (client != null) {
-			client.setPoint(Tablet.getOrder());
+			client.setPoint(currentOrder);
 			Register.showPointInfo(client);
 			return false;
 		}

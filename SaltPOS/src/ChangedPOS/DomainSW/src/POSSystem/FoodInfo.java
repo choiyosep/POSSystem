@@ -24,16 +24,5 @@ public class FoodInfo {
 	
 	public void setName(String name) {
 		this.name = name;
-	}
-
-
-	@Override
-	public String toString() {
-		return "FoodInfo [name=" + name + ", price=" + price + "]";
-	}
-	
-	
-	
-	
-	
+	}	
 }
