@@ -8,8 +8,7 @@ public class Register {
 	private static PaymentFactory paymentFactory = new PaymentFactory();
 	private static Refund currentRefund;
 	private static Order currentOrder;
-	private static Payment payment;
-	private static CalculateSale currentCaculateSale;	
+	private static CalculateSale currentCaculateSale;
 	public static ClientList clientList ;
 	
 	
@@ -79,34 +78,38 @@ public class Register {
 	/* payment method*/
 		
 	public static void makeCashPayment() {
-		setPayment(paymentFactory.makePayment("CashPayment"));
+		Payment payment= paymentFactory.makePayment("CashPayment");
+		currentOrder.setPayment(payment);
 	}
 	
 	public static void makeCreditPayment() {
-		setPayment(paymentFactory.makePayment("CreditPayment"));		
+		Payment payment= paymentFactory.makePayment("CashPayment");
+		currentOrder.setPayment(payment);		
 	}
 	
 	public static void makeGiftPayment() {
-		setPayment(paymentFactory.makePayment("GiftPayment"));		
+		Payment payment= paymentFactory.makePayment("CashPayment");
+		currentOrder.setPayment(payment);		
 	}
 	
 	public static void makePointPayment() {
-		setPayment(paymentFactory.makePayment("PointPayment"));	
+		Payment payment= paymentFactory.makePayment("CashPayment");
+		currentOrder.setPayment(payment);	
 	}
 	
 	public static void enterCash(int cash) {
 		int total = currentOrder.getTotal();
-		payment.showChange(cash, total);
+		currentOrder.getPayment().showChange(cash, total);
 	}
 
 	public static void enterCreditInfo(String cardNumber) {
 		int total = currentOrder.getTotal();
-		payment.showResult(cardNumber, total);
+		currentOrder.getPayment().showResult(cardNumber, total);
 	}
 
 	public static void enterGiftInfo(String giftNumber) {
 		int total = currentOrder.getTotal();
-		payment.showResult(giftNumber, total);
+		currentOrder.getPayment().showResult(giftNumber, total);
 	}
 	
 
@@ -137,11 +140,6 @@ public class Register {
 	}	
 
 
-	public static void setPayment(Payment payment) {
-		Register.payment = payment;
-	}
-
-
 	public static void showRefundResult() {
 		System.out.println(currentOrder.getTotal()+"원 환불 완료되었습니다!! 감사합니다");
 		
@@ -169,7 +167,7 @@ public class Register {
            currentPoint = client.getPoint();
            orderPay = Register.getCurrentOrder().getTotal();
            if(currentPoint >= orderPay) {
-        	 payment.showChange(currentPoint, orderPay);
+        	   currentOrder.getPayment().showChange(currentPoint, orderPay);
         	 //포인트 차감
         	 client.subPoint(orderPay);
            } else {

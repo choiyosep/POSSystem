@@ -27,20 +27,18 @@ public class Order {
 	public void makeLineItem(FoodInfo foodInfo,int quantity){
 		OrderedFood orderedFood = new OrderedFood(foodInfo,quantity);
 		orderedFoodList.add(orderedFood);
-	}
-	
-	//public Payment makePayment(String paymentType){
-		//payment = PaymentFactory.
-		//return payment;
-	//}
-	
+	}	
 	
 	public ArrayList<OrderedFood> getOrderdedFoodList(){
 		return orderedFoodList;
 	}
 
-	public void enterCustomer(String phone_number) {
-		
+	public void setPayment(Payment payment) {
+		this.payment = payment;
+	}
+
+	public Payment getPayment() {
+		return payment;
 	}
 	
 	
