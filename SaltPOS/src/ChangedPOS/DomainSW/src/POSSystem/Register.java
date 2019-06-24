@@ -14,7 +14,7 @@ public class Register {
 	
 	
 	public static void startUp() {
-		clientList.InsertPair("010-1234-5678", 0);
+		clientList.InsertPair("010-1234-5678", 50000);
 		clientList.InsertPair("010-2357-7424", 0);
 	}
 	

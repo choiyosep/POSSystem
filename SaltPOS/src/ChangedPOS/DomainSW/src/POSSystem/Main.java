@@ -3,11 +3,7 @@ package POSSystem;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] arg) {
-		Tablet tablet = new Tablet();
-		Order currentOrder;
-
-		
+	public static void main(String[] arg) {		
 		Register.startUp();
 		Tablet.startUp();
 		
@@ -16,20 +12,19 @@ public class Main {
 
 		do {
 			int menuNumber, count;
-			tablet.getMenu();
+			Tablet.getMenu();
 
 			menuNumber = sc.nextInt();
 			if (menuNumber == 0) {
 				// 주문완료
-				tablet.orderMenu();
+				Tablet.orderMenu();
 				// tablet의 주문정보를 POS로 전송
 				break;
 			}
 
 			System.out.println("수량을 입력해주세요");
 			count = sc.nextInt();
-
-			tablet.selectMenu(menuNumber - 1, count);
+			Tablet.selectMenu(menuNumber - 1, count);
 		} while (true);
 
 		System.out.println("==============POS System===========");
