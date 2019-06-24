@@ -184,7 +184,7 @@
       <position height="162" width="82" x="3072" y="129"/>    
     </execution>    
     <execution id="79">      
-      <position height="346" width="82" x="3072" y="356"/>    
+      <position height="334" width="82" x="3072" y="356"/>    
     </execution>  
   </object>  
   <object id="82" language="java" name="POSSystem.Register" project="DomainSW" 
@@ -197,7 +197,7 @@
       <position height="27" width="0" x="0" y="210"/>    
     </execution>    
     <execution id="81">      
-      <position height="292" width="338" x="3158" y="383"/>    
+      <position height="280" width="338" x="3158" y="383"/>    
     </execution>  
   </object>  
   <object id="89" language="java" name="POSSystem.Order" project="DomainSW" file="/DomainSW/src/POSSystem/Order.java" 
@@ -218,7 +218,7 @@
     file="/DomainSW/src/POSSystem/Payment.java" binary="false" label="payment" type="class" autoSize="true">    
     <position height="0" width="0" x="0" y="0"/>    
     <execution id="88">      
-      <position height="27" width="0" x="0" y="621"/>    
+      <position height="27" width="82" x="3725" y="609"/>    
     </execution>  
   </object>  
   <object id="94" language="java" name="POSSystem.Main" project="DomainSW" file="/DomainSW/src/POSSystem/Main.java" 
@@ -506,7 +506,7 @@
     <end type="SOURCE" refId="51"/>    
     <end type="TARGET" refId="60"/>  
   </message>  
-  <message id="67" operation="enterClientInfo(java.lang.String):void" asynchronous="false">    
+  <message id="67" operation="enterClientInfo(java.lang.String):boolean" asynchronous="false">    
     <end type="SOURCE" refId="66"/>    
     <end type="TARGET" refId="68"/>  
   </message>  
@@ -522,7 +522,7 @@
     <end type="SOURCE" refId="76"/>    
     <end type="TARGET" refId="78"/>  
   </message>  
-  <message id="80" operation="enterClientInfo(java.lang.String):void" asynchronous="false">    
+  <message id="80" operation="enterClientInfo(java.lang.String):boolean" asynchronous="false">    
     <end type="SOURCE" refId="79"/>    
     <end type="TARGET" refId="81"/>  
   </message>  
@@ -534,7 +534,7 @@
     <end type="SOURCE" refId="81"/>    
     <end type="TARGET" refId="86"/>  
   </message>  
-  <message id="87" operation="showResult(java.lang.String,int):void" asynchronous="false">    
+  <message id="87" operation="showChange(int,int):void" asynchronous="false">    
     <end type="SOURCE" refId="81"/>    
     <end type="TARGET" refId="88"/>  
   </message>  

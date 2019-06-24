@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.3" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="POSSystem.Main" project="DomainSW" file="/DomainSW/src/POSSystem/Main.java" 
+    binary="false" label="main" type="class" autoSize="false">    
+    <position height="248" width="207" x="0" y="0"/>    
+    <execution id="2">      
+      <position height="511" width="82" x="5" y="141"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="135" width="203" x="5" y="680"/>    
+    </execution>  
+  </object>  
+  <object id="8" language="java" name="POSSystem.Register" project="DomainSW" 
+    file="/DomainSW/src/POSSystem/Register.java" binary="false" label="register" type="class" autoSize="false">    
+    <position height="221" width="296" x="207" y="0"/>    
+    <execution id="4">      
+      <position height="457" width="97" x="91" y="168"/>    
+    </execution>    
+    <execution id="14">      
+      <position height="27" width="0" x="0" y="374"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="81" width="292" x="212" y="707"/>    
+    </execution>  
+  </object>  
+  <object id="19" language="java" name="POSSystem.ClientList" project="DomainSW" 
+    file="/DomainSW/src/POSSystem/ClientList.java" binary="false" label="clientList" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="10">      
+      <position height="27" width="0" x="0" y="195"/>    
+    </execution>  
+  </object>  
+  <object id="20" language="java" name="POSSystem.Client" project="DomainSW" file="/DomainSW/src/POSSystem/Client.java" 
+    binary="false" label="client" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="12">      
+      <position height="27" width="0" x="0" y="293"/>    
+    </execution>    
+    <execution id="18">      
+      <position height="27" width="0" x="0" y="734"/>    
+    </execution>  
+  </object>  
+  <object id="21" language="java" name="POSSystem.Order" project="DomainSW" file="/DomainSW/src/POSSystem/Order.java" 
+    binary="false" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="16">      
+      <position height="184" width="0" x="0" y="414"/>    
+    </execution>  
+  </object>  
+  <object id="24" language="java" name="POSSystem.OrderedFood" project="DomainSW" 
+    file="/DomainSW/src/POSSystem/OrderedFood.java" binary="false" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="23">      
+      <position height="27" width="0" x="0" y="544"/>    
+    </execution>  
+  </object>  
+  <combined-fragment id="25" interaction-operator="OPT">    
+    <interaction-operand id="26" constraint="client != null">      
+      <fragment refId="27"/>      
+      <fragment refId="15"/>      
+      <fragment refId="13"/>      
+      <fragment refId="28"/>      
+      <fragment refId="11"/>    
+    </interaction-operand>    
+    <combined-fragment id="28" interaction-operator="LOOP">      
+      <interaction-operand id="29" constraint="for:i&lt;orderedFoodList.size()">        
+        <fragment refId="22"/>      
+      </interaction-operand>    
+    </combined-fragment>  
+  </combined-fragment>  
+  <message id="3" operation="enterClientPhoneInfo(java.lang.String):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="showPointInfo(POSSystem.Client):void" asynchronous="false">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="9" operation="isClient(java.lang.String):POSSystem.Client" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="11" operation="getPoint():int" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="12"/>  
+  </message>  
+  <message id="13" operation="getCurrentOrder():POSSystem.Order" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>  
+  <message id="15" operation="getTotal():int" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="17" operation="getPoint():int" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="22" operation="getSubtotal():int" asynchronous="false">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="23"/>  
+  </message>
+</sequence-diagram>

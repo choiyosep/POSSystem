@@ -59,7 +59,7 @@ public class Main {
 					do {
 						System.out.println("적립금 적립를 위해 핸드폰 번호를 입력하세요.");
 						phoneNumber = sc2.nextLine();						
-						flag = Register.enterClientPhoneInfo(phoneNumber);
+						flag = Register.enterClientInfo(phoneNumber);
 					} while (flag);
 
 					break;
@@ -71,7 +71,7 @@ public class Main {
 					do {
 						System.out.println("적립금 적립를 위해 핸드폰 번호를 입력하세요.");
 						phoneNumber = sc2.nextLine();
-						flag = Register.enterClientPhoneInfo(phoneNumber);
+						flag = Register.enterClientInfo(phoneNumber);
 					} while (flag);
 					break;
 				case (3):
@@ -82,7 +82,7 @@ public class Main {
 					do {
                         System.out.println("적립금 적립를 위해 핸드폰 번호를 입력하세요.");
                         phoneNumber =sc2.nextLine();
-						flag = Register.enterClientPhoneInfo(phoneNumber);
+						flag = Register.enterClientInfo(phoneNumber);
                      } while(flag);
 					break;
 				case (4):
@@ -90,8 +90,8 @@ public class Main {
 					do {
 	                    System.out.println("핸드폰 번호를 입력하세요.");
 	                    phoneNumber =sc2.nextLine();
-						flag = Register.enterClientInfo(phoneNumber);        
-	                 } while(flag);				
+						flag = Register.enterClientPhoneInfo(phoneNumber);        
+	                 } while(flag);
 					break;
 				}
 				break;
